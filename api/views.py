@@ -7,7 +7,7 @@ from rest_framework import generics
 from rest_framework.authtoken.models import Token
 from .serializers import Win_One_Serializer, LoginSerializer,UserRegisterSerializer
 from Wing.models import Wing_One
-from .validations import custom_validation,validate_email,validate_password
+from .validations import custom_validation
 
 
 class UserRegisterApi(APIView):
@@ -37,10 +37,9 @@ class LoginApi(APIView):
         user_obj = authenticate(username=username, password=password)
         if user_obj:
             token , _ = Token.objects.get_or_create(user=user_obj)
-            print(token)
             return Response({
 				'status':True,
-                'data':{'Token': token.key}
+                'Token':token.key
 		})
         
 
