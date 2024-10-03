@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Home
+Dashboard
 {% endblock %}
 
 {% block extra_head %}
@@ -16,15 +16,10 @@ Home
 {% block content %}
 <div class="container mt-5">
 
-  <br>
-  <h3 class="text-center">Borrowing Application</h3>
-  <br>
-  <h5 class="text-center">--Insert Data</h5>
-  <br>
-
-{% include 'wing_form.html' %}
+{% include 'filter.html' %}
 
 </div>
+<br><br>
 
 <div class="container-fluid">
   <div class="mt-5">
@@ -39,10 +34,8 @@ Home
           <th scope="col">Development Partner</th>
           <th scope="col">Co-Financer</th>
           <th scope="col">Loan/Grant</th>
-          <th scope="col">Status</th>
           <th scope="col">Sector</th>
           <th scope="col">Comments</th>
-          <th scope="col">Update</th>
         </tr>
       </thead>
 
@@ -61,12 +54,8 @@ Home
             {% endfor %}
           </td>
           <td>{{ obj.loan_or_grant }}</td>
-          <td>{{ obj.status }}</td>
           <td>{{ obj.sector }}</td>
           <td>{{ obj.comments }}</td>
-          <td>
-            <a href="{% url 'update-wing' obj.id %}" class="btn btn-info">Update</a>
-          </td>
         </tr>
         {% endfor %}
 
