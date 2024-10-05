@@ -81,7 +81,7 @@ def wing_page(request, pk):
     amount_per_currency = request.GET.get('amount_per_currency')
     amount_in_million = request.GET.get('amount_in_million')
 
-    if name_of_proj_query != '' and wing_query is not None:
+    if name_of_proj_query != '' and name_of_proj_query is not None:
         qs = qs.filter(name__icontains=name_of_proj_query).distinct()
     elif amount_per_currency != '' and amount_per_currency is not None:
         qs = qs.filter(amount_as_per_agreement_currency__icontains=amount_per_currency).distinct()
@@ -91,6 +91,7 @@ def wing_page(request, pk):
     context = {
         'queryset':qs,
         'wing':wing,
+        'user':user,
         
     }
     return render(request, 'wing.html', context)
