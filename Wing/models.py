@@ -164,7 +164,12 @@ class Wing_One(models.Model):
     loan_or_grant                    = models.CharField(max_length=200, choices=LOAN_GRANT, default='Loan')
     status                           = models.CharField(max_length=100, choices=PROPABILITY)
     sector                           = models.CharField(max_length=500, choices=SECTOR, default='General Public Services')
-    comments                         = models.TextField()
+    if_loan_conditionally            = models.TextField(null=True, blank=True)
+    current_status                   = models.TextField(null=True, blank=True)
+    previous_month_status            = models.TextField(null=True, blank=True)
+    comments                         = models.TextField(null=True, blank=True)
+
+
 
     def __str__(self):
         return self.name

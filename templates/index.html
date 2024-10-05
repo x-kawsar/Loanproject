@@ -41,6 +41,9 @@ Home
           <th scope="col">Loan/Grant</th>
           <th scope="col">Status</th>
           <th scope="col">Sector</th>
+          <th scope="col">If Loan then Conditionality.</th>
+          <th scope="col">Current status</th>
+          <th scope="col">Previous Month Status</th>
           <th scope="col">Comments</th>
           <th scope="col">Update</th>
         </tr>
@@ -63,6 +66,9 @@ Home
           <td>{{ obj.loan_or_grant }}</td>
           <td>{{ obj.status }}</td>
           <td>{{ obj.sector }}</td>
+          <td>{{ obj.if_loan_conditionally }}</td>
+          <td>{{ obj.current_status }}</td>
+          <td>{{ obj.previous_month_status }}</td>
           <td>{{ obj.comments }}</td>
           <td>
             <a href="{% url 'update-wing' obj.id %}" class="btn btn-info">Update</a>
