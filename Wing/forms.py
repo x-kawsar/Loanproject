@@ -138,22 +138,22 @@ DEV_PARTNER = (
 )
 
 class Wing_One_Form(forms.ModelForm):
-    name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'type':'text', 'placeholder':'Name of project'}))
+    name                             = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'type':'text', 'placeholder':'Name of project'}))
     amount_as_per_agreement_currency = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'type':'text', 'placeholder':'amount as per agreement urrency'}))
-    amount_in_equivalent_million_us = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'type':'text', 'placeholder':'Amount in million'}))
-    date_of_signature = forms.CharField(widget=forms.TextInput(attrs={'type':'date'}))
-    comments = forms.CharField(required=False,widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'Comments','cols':'20', 'rows':'5'}))
-    development_partner = forms.ChoiceField(choices=DEV_PARTNER,widget=forms.Select(attrs={'class': 'form-control'}))
-    date_of_signature = forms.DateField(widget=forms.DateInput(attrs={'class':'form-control', 'type':'date'}))
-    sector = forms.ChoiceField(choices=SECTOR,widget=forms.Select(attrs={'class': 'form-control'}))
-    loan_or_grant = forms.ChoiceField(choices=LOAN_GRANT,widget=forms.Select(attrs={'class': 'form-control'}))
-    currency = forms.ChoiceField(choices=CURRENCY,widget=forms.Select(attrs={'class': 'form-control'}))
-    status = forms.ChoiceField(choices=PROPABILITY,widget=forms.Select(attrs={'class': 'form-control'}))
-    if_loan_conditionally = forms.CharField(required=False,widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'If Loan Conditionally', 'cols':'20', 'rows':'5'}))
-    current_status = forms.CharField(required=False,widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'Current Status', 'cols':'20', 'rows':'5'}))
-    previous_month_status = forms.CharField(required=False,widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'Previous Month Status', 'cols':'20', 'rows':'5'}))
+    amount_in_equivalent_million_us  = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'type':'text', 'placeholder':'Amount in million'}))
+    date_of_signature                = forms.CharField(widget=forms.TextInput(attrs={'type':'date'}))
+    comments                         = forms.CharField(required=False,widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'Comments','cols':'20', 'rows':'5'}))
+    development_partner              = forms.ChoiceField(choices=DEV_PARTNER,widget=forms.Select(attrs={'class': 'form-control'}))
+    date_of_signature                = forms.DateField(widget=forms.DateInput(attrs={'class':'form-control', 'type':'date'}))
+    sector                           = forms.ChoiceField(choices=SECTOR,widget=forms.Select(attrs={'class': 'form-control'}))
+    loan_or_grant                    = forms.ChoiceField(choices=LOAN_GRANT,widget=forms.Select(attrs={'class': 'form-control'}))
+    currency                         = forms.ChoiceField(choices=CURRENCY,widget=forms.Select(attrs={'class': 'form-control'}))
+    status                           = forms.ChoiceField(choices=PROPABILITY,widget=forms.Select(attrs={'class': 'form-control'}))
+    if_loan_conditionally            = forms.CharField(required=False,widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'If Loan Conditionally', 'cols':'20', 'rows':'5'}))
+    current_status                   = forms.CharField(required=False,widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'Current Status', 'cols':'20', 'rows':'5'}))
+    previous_month_status            = forms.CharField(required=False,widget=forms.Textarea(attrs={'class':'form-control', 'type':'text', 'placeholder':'Previous Month Status', 'cols':'20', 'rows':'5'}))
 
     class Meta:
         model = Wing_One
         fields = '__all__'
-        exclude = ['wing']
+        exclude = []
