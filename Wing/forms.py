@@ -156,4 +156,4 @@ class Wing_One_Form(forms.ModelForm):
     class Meta:
         model = Wing_One
         fields = '__all__'
-        exclude = []
+        exclude = ['wing']
