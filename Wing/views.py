@@ -10,7 +10,7 @@ from . decorators import admin_only,allowerd_users
 @login_required(login_url='login')
 @admin_only
 def dashboard(request):
-    wing = User.objects.all()
+    wing = User.objects.all().exclude(username='admin')
     qs = Wing_One.objects.all()
 
     name_of_proj_query = request.GET.get('name_of_proj')
@@ -74,7 +74,7 @@ def update_wing(request, pk):
 def wing_page(request, pk):
     user = User.objects.get(id=pk)
     qs = Wing_One.objects.filter(wing=user)
-    wing = User.objects.all()
+    wing = User.objects.all().exclude(username='admin')
 
     name_of_proj_query = request.GET.get('name_of_proj')
     wing_query = request.GET.get('wing')
