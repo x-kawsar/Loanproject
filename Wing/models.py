@@ -168,6 +168,7 @@ class Wing_One(models.Model):
     current_status                   = models.TextField(null=True, blank=True)
     previous_month_status            = models.TextField(null=True, blank=True)
     comments                         = models.TextField(null=True, blank=True)
+    updated                          = models.DateTimeField(auto_now=True)
 
 
 

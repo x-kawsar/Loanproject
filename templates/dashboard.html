@@ -35,6 +35,9 @@ Dashboard
           <th scope="col">Co-Financer</th>
           <th scope="col">Loan/Grant</th>
           <th scope="col">Sector</th>
+          <th scope="col">If Loan then Conditionality.</th>
+          <th scope="col">Current status</th>
+          <th scope="col">Previous Month Status</th>
           <th scope="col">Comments</th>
         </tr>
       </thead>
@@ -55,6 +58,9 @@ Dashboard
           </td>
           <td>{{ obj.loan_or_grant }}</td>
           <td>{{ obj.sector }}</td>
+          <td>{{ obj.if_loan_conditionally }}</td>
+          <td>{{ obj.current_status }}</td>
+          <td>{{ obj.previous_month_status }}</td>
           <td>{{ obj.comments }}</td>
         </tr>
         {% endfor %}
@@ -70,6 +76,10 @@ Dashboard
           <th scope="col">Grant</th>
           <th scope="col"></th>
           <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          
         </tr>
       </tbody>
     </table>
